@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 3: More JavaScript | CS559: Workbook 1</title>
+
+
+<link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
+
+
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="">CS559: Workbook 1</a>
+</h2>
+
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fthree\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><a href="/"><strong>Getting Started</strong></a></li>
+<li><a href="/docs/one/">Page 1: HTML Basics</a></li>
+<li><a href="/docs/two/">Page 2: JavaScript Basics</a></li>
+<li><a href="/docs/three/">Page 3: More JavaScript</a></li>
+<li><a href="/docs/four/">Page 4: Practice Yourself</a></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Page 3: More JavaScript</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="page-3-more-javascript">Page 3: More JavaScript</h1>
+
+<p>On the previous page, we saw a little bit of JavaScript
+and saw how it can be attached to a web page.</p>
+
+<p>On this page, we&rsquo;ll continue. We&rsquo;ll use JavaScript to change
+page content, and make buttons and sliders do things.</p>
+
+<p>The real goal is to learn the ideas of event-driven and
+animation-loop-driven programming.
+Soon, we&rsquo;ll use these two programming styles to write graphics
+programs. But for now, we&rsquo;ll just use them to do silly things
+with the contents of a simple web page.</p>
+
+<p>In the process, we&rsquo;ll get to see buttons, sliders, and animation.</p>
+
+<p>The things we&rsquo;re doing on this page are simple and/or silly, but the idea is
+to practice on easy things before getting to doing graphics.</p>
+
+<p>For this page, all of the JavaScript code is in a single file
+called &ldquo;three.js&rdquo; (not to be confused with the three.js library)
+that we&rsquo;ll put everything for all the boxes in. Again, be sure
+to read along in the code what you see in the web page.</p>
+
+<p>Like the previous pages, this one doesn&rsquo;t ask you to do much other
+than to read. However, you might want to change things to see
+what happens when you make changes. Remember, if you mess things
+up, you can always use GIT to help you get back to an older version.</p>
+
+<h2 id="box-1-changing-the-page">Box 1: Changing the page</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-1.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="box-2-button-events">Box 2: Button Events</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-2.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="box-3-slider-events">Box 3: Slider Events</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-3.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="box-4-sliders-as-outputs">Box 4: Sliders as Outputs</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-4.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="box-5-animation-and-requestanimationframe">Box 5: Animation and RequestAnimationFrame</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-5.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="box-6-animation-loop-programming">Box 6: Animation Loop Programming</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-6.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="box-7-one-more-silly-example">Box 7: One More Silly Example</h2>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="/boxes/box3-7.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h2 id="summary">Summary:</h2>
+
+<p>Some important things in this lesson:
+<ul>
+    <li>The difference between event-driven and polling (animation-loop) programming</li>
+    <li>How we do animation loops and even handling in JavaScript for HTML</li>
+    <li>How we make use of the values of input elements (sliders, buttons) in animation loop programs</li>
+    <li>How we look at the &ldquo;clock time&rdquo; to set the rate at which things change</li>
+</ul>
+Next week, we&rsquo;ll use these ideas for graphics programming. But for this week, go on to <a href="/docs/four/">page 4</a> where you can try this out for yourself.</p>
+</article>
+
+      
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#page-3-more-javascript">Page 3: More JavaScript</a>
+<ul>
+<li><a href="#box-1-changing-the-page">Box 1: Changing the page</a></li>
+<li><a href="#box-2-button-events">Box 2: Button Events</a></li>
+<li><a href="#box-3-slider-events">Box 3: Slider Events</a></li>
+<li><a href="#box-4-sliders-as-outputs">Box 4: Sliders as Outputs</a></li>
+<li><a href="#box-5-animation-and-requestanimationframe">Box 5: Animation and RequestAnimationFrame</a></li>
+<li><a href="#box-6-animation-loop-programming">Box 6: Animation Loop Programming</a></li>
+<li><a href="#box-7-one-more-silly-example">Box 7: One More Silly Example</a></li>
+<li><a href="#summary">Summary:</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>
