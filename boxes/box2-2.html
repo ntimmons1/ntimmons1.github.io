@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+</header>
+
+<body>
+
+    <div id="box02" class="examplebox">
+        <p>
+            If we're not supposed to put JavaScript into the HTML files, the next
+            question is where to put it.
+        </p>
+        <p>
+            We will put JavaScript programs into separate files - dividing them up into
+            smaller chunks (roughly "modules"), but that will come later.
+            By convention, I will always name my JavaScript files with ".js", although
+            other people will do other things (for example, we might name the files
+            with ".es6" to signify that we're using the ES6 version of JavaScript).
+        </p>
+        <p>
+            We load JavaScript files into our HTML page using the same
+            <code>&lt;script&gt;</code> tag that we used in Box 1. Except that
+            rather than putting the code inline, the tag gives the file name
+            to load. Look at the HTML, it's right in this paragraph.
+            <script src="two.js" type="module"></script>
+            You will also want to look at the file that got loaded ("two.js") and
+            check the console (since, like Box 1, the code writes there).
+        </p>
+        <p>
+            If you're curious (and you should be) the <code>type="module"</code>
+            in the tag tells the browser that we want the ES6 version of JavaScript.
+        </p>
+    </div>
+
+
+</body>

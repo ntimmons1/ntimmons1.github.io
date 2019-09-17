@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+    <script src="three.js" type="module"></script>
+</header>
+
+<body>
+
+    <div id="box6" class="examplebox">
+        <p>
+            Here is another example.
+            Notice how the first slider doesn't need
+            to ever create an event. When the second slider
+            is updated, it polls the first (looks at its value).
+        </p>
+        <p>
+            Change the first slider to affect how the second one moves.
+        </p>
+        <p>
+            <input type="range" min="-5" max="5" value="1" id="box6-slider1">
+            <input type="range" min="0" max="100" id="box6-slider2">
+        </p>
+        <p>
+            Or with a checkbox (buttons are mainly good at generating events):
+        </p>
+        <p>
+            speed: <input type="checkbox" id="box6-check">
+            <input type="range" min="0" max="100" id="box6-slider3">
+        </p>
+        <p>
+            Or, even this.... (which isn't that much different)
+        </p>
+        <p>
+            go: <input type="checkbox" id="box6-check2">
+            <input type="range" min="0" max="100" id="box6-slider4">
+        </p>
+        <p>
+            The thing to notice here is that the "loop" runs even if
+            the slider isn't moving! In this case, it's pretty wasteful.
+            But it gets at the main idea of animation loop programming:
+            the loop keeps going, and each iteration it checks to see if
+            something happened. In contrast, event-loop programming only
+            does things when something happens.
+        </p>
+    </div>
+
+</body>

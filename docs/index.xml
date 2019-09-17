@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on CS559: Workbook 1</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on CS559: Workbook 1</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Page 1: HTML Basics</title>
+      <link>/docs/one/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/one/</guid>
+      <description>Page 1: HTML Basics You should have already looked at the index page.
+For this workbook page, you don&amp;rsquo;t have to do anything other than read. We encourage you to make changes in the box files (so you can see the effects), but we are simply going to assume that you&amp;rsquo;ve done the &amp;ldquo;work&amp;rdquo;. Throughout the page, there are suggestions for things to try to make sure that you understand how things work.</description>
+    </item>
+    
+    <item>
+      <title>Page 2: JavaScript Basics</title>
+      <link>/docs/two/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/two/</guid>
+      <description>Page 2: JavaScript Basics You should have done page 1 already and are used to the idea of using a workbook and looking at the HTML. Now we&amp;rsquo;ll add some JavaScript programming.
+This page is less about JavaScript, and more to check that you understand some of the details as to how we connect JavaScript programs to web pages.
+A secondary goal of this page is to make sure that you know how to use the tools for JavaScript programming.</description>
+    </item>
+    
+    <item>
+      <title>Page 3: More JavaScript</title>
+      <link>/docs/three/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/three/</guid>
+      <description>Page 3: More JavaScript On the previous page, we saw a little bit of JavaScript and saw how it can be attached to a web page.
+On this page, we&amp;rsquo;ll continue. We&amp;rsquo;ll use JavaScript to change page content, and make buttons and sliders do things.
+The real goal is to learn the ideas of event-driven and animation-loop-driven programming. Soon, we&amp;rsquo;ll use these two programming styles to write graphics programs. But for now, we&amp;rsquo;ll just use them to do silly things with the contents of a simple web page.</description>
+    </item>
+    
+    <item>
+      <title>Page 4: Practice Yourself</title>
+      <link>/docs/four/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/four/</guid>
+      <description>Page 4: Practice Yourself So far, this workbook has mainly been you reading code (and html). Hopefully, you also took the opportunity to do some extra reading (for example, reading some JavaScript references). And some tinkering: one way to understand the programs is to try to make changes to see how things work.
+To help you check that you are getting the concepts, here are a few little programming things to try.</description>
+    </item>
+    
+  </channel>
+</rss>

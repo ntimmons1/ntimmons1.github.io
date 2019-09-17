@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+    <script src="three.js" type="module"></script>
+</header>
+
+<body>
+
+    <div id="box2" class="examplebox">
+        <p>
+            We saw this on the last page, but when a button is clicked
+            it calls the <code>onclick</code> handler.
+            More generally, when something happens (to almost any element),
+            it creates an event.
+            We can tie a function (called a handler) to the event, and do things
+            when the event happens.
+            In these examples, we will have some buttons, and have the handlers change
+            things on the web page.
+            Be sure to look at the HTML and JavaScript to see what is going on.
+            There is a lot of discussion in the comments
+        </p>
+        <div>
+            <button id="box2-button1" class="simplebutton">1</button>
+            <button id="box2-button2" class="simplebutton">2</button>
+            <button id="box2-button3" class="simplebutton">3</button>
+        </div>
+        <ul>
+            <li id="box2-li1">Button 1 was not pressed yet</li>
+            <li id="box2-li2">Button 2 was not pressed yet</li>
+            <li id="box2-li3">Button 3 was not pressed yet</li>
+        </ul>
+        <p>
+            An obvious, but important thing here is that our code only gets
+            run when an event happens. Otherwise, we don't do anything.
+            This is called <em>event-driven</em> programming.
+        </p>
+        <p>
+            Different kinds of HTML elements generate different kinds of events.
+        </p>
+    </div>
+
+</body>
