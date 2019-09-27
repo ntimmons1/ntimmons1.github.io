@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style559.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="a02.css" /
+</header>
+
+<body>
+
+    <div id="box3" class="examplebox">
+        <p>
+            Now, let's animate those squares. This is very similar to box 2, except
+            that we'll create an animation loop to move the squares.
+        </p>
+        <div>
+                <canvas id="canvas3" width="150px" height="100px" ></canvas>
+                <svg id="svg3" width="150px" height="100px" ></svg>
+        </div>
+        <p>
+            Have a look at the JavaScript for this box, especially the <code>onTick</code>
+            function that moves things (remember animation loops from Workbook 1?).
+        </p>
+        <p>
+            This example hopefully highlights the difference between the <em>immediate</em> mode
+            API (Canvas) and the <em>retained</em> mode API (SVG).
+            In retained mode, the primitives (in this case the square) are
+            represented as data. To move them, we change the data structure.
+            In immediate mode, the primitives are drawn - they are only represented
+            in the code. To animate things, we need to erase the picture and re-draw
+            the picture.
+        </p>
+        <p>
+            In some ways, immediate mode is easier: we draw what we want, when we
+            want. We can use whatever data structures we want to represent things.
+            In other ways, retained mode is easier: we can create objects, and then
+            alter them as needed.
+        </p>
+    </div>
+    <script src="page1.js" type="module"></script>
+</body>

@@ -17,6 +17,14 @@ body {
     margin: 0px 10px 30px 5px;
 }
 
+/** make the summaries a little different */
+.sumbox {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+    margin: 15px 5px 15px 5px; 
+}
+
 /** simple box for text */
 .simplebox {
     border: 2px solid black;
@@ -25,6 +33,14 @@ body {
     width: 500px;
 }
 
+/** a warning box */
+.warnbox {
+    border: 2px solid darkgoldenrod;
+    background-color: #F0E59f;
+    padding: 10px;
+    margin: 10px;
+    width: 80%
+}
 
 /** basic button style so things aren't too ugly */
 /* for playing with the buttons */
@@ -45,15 +61,4 @@ body {
 }
 
 
-/*** Simple SVG styles for testing ***/
-.lightbluewithborder {
-    fill: #CCF;
-    stroke: #00F;
-    stroke-width: 4px;
-}
-.lightredwithborder {
-    fill: #FCC;
-    stroke: #F00;
-    stroke-width: 2px;
-};
 

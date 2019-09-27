@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style559.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="a02.css" /
+</header>
+
+<body>
+
+    <div id="box4" class="examplebox">
+        <p>
+            The basic idea of SVG in the web browser is that each graphics object
+            (like the square) is an HTML element in the DOM - just the same as
+            anything else (paragraphs, buttons, scripts, ...).
+            Adding the rectangle to the SVG element is just like adding a button
+            to a paragraph.
+        </p>
+        <p>
+            Since the graphics elements are just like any other HTML element, we
+            can do the same basic things: assign them an id, give them classes,
+            use style sheets, etc. We can even create them right in the HTML using
+            tags. They generate events just like many other kinds of HTML elements.
+            Try moving the mouse over the rectangles on the right. Then
+            look into the JavaScript to see that this works just like any other event.
+            Also notice that the classes are defined in <code>a02.css</code>.
+            This is where the colors come from.
+            <div>
+                <svg width="150px" height="100px" style="border:1px solid #000">
+                        <rect id="svgrect1" x="30" y="30" width="30" height="30" style="fill:#F00"></rect>
+                        <rect id="svgrect2" x="90" y="50" width="30" height="30" class="lightbluewithborder"></rect>
+                    </svg>
+                <svg width="150px" height="100px" style="border:1px solid #000">
+                    <rect id="svgrect3" x="30" y="30" width="30" height="30" class="lightbluewithborder"></rect>
+                    <rect id="svgrect4" x="90" y="50" width="30" height="30" class="lightbluewithborder"></rect>
+                </svg>
+
+            </div>
+        </p>
+    </div>
+    <script src="page1.js" type="module"></script>
+</body>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 3: More JavaScript | CS559: Workbook 1</title>
+<title>Three | CS559: Workbook 2</title>
 
 
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
@@ -30,7 +30,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav>
 <h2 class="book-brand">
-  <a href="">CS559: Workbook 1</a>
+  <a href="">CS559: Workbook 2</a>
 </h2>
 
 
@@ -51,10 +51,12 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/"><strong>Getting Started</strong></a></li>
-<li><a href="/docs/one/">Page 1: HTML Basics</a></li>
-<li><a href="/docs/two/">Page 2: JavaScript Basics</a></li>
-<li><a href="/docs/three/">Page 3: More JavaScript</a></li>
-<li><a href="/docs/four/">Page 4: Practice Yourself</a></li>
+<li><a href="/docs/one/">Page 1: Web Graphics APIs</a></li>
+<li><a href="/docs/two/">Page 2: Drawing with Canvas</a></li>
+<li><a href="/docs/three/">Page 3: Canvas Drawing: Your Turn</a></li>
+<li><a href="/docs/four/">Page 4: Animation and Interaction with Canvas</a></li>
+<li><a href="/docs/five/">Page 5: Try Canvas Programming</a></li>
+<li><a href="/docs/six/">Page 6: Where did I draw?</a></li>
 </ul>
 
 
@@ -83,121 +85,74 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Page 3: More JavaScript</strong>
+  <strong>Three</strong>
 </header>
 
       
 <article class="markdown">
 
-<h1 id="page-3-more-javascript">Page 3: More JavaScript</h1>
+<h1 id="page-3-canvas-drawing-your-turn">Page 3: Canvas Drawing: Your Turn</h1>
 
-<p>On the previous page, we saw a little bit of JavaScript
-and saw how it can be attached to a web page.</p>
+<p>Now that you&rsquo;ve learned to draw, you&rsquo;ll get to draw something!</p>
 
-<p>On this page, we&rsquo;ll continue. We&rsquo;ll use JavaScript to change
-page content, and make buttons and sliders do things.</p>
+<p>There are two exercises - you must make a picture for each.
+In the first one, you have to make the picture you&rsquo;re asked for.
+In the second one, you can make anything you want.</p>
 
-<p>The real goal is to learn the ideas of event-driven and
-animation-loop-driven programming.
-Soon, we&rsquo;ll use these two programming styles to write graphics
-programs. But for now, we&rsquo;ll just use them to do silly things
-with the contents of a simple web page.</p>
+<p>You should do these exercises by editing the file <code>for_students/page3.js</code>.
+We&rsquo;ve actually started things for you.
+Specifically, your code for exercise 1 should go into the function
+<code>wb2_pg3_ex1</code>, and your code for exercise 2 should go into the function
+<code>wb2_pg3_ex2</code>. Please put all of your code inside of these functions!</p>
 
-<p>In the process, we&rsquo;ll get to see buttons, sliders, and animation.</p>
+<p>You do not need to use Canvas concepts that we haven&rsquo;t learned about yet (transformations or curves). You can use images or text if you want. If you use an image file, make sure you add it to the GitHub repo!</p>
 
-<p>The things we&rsquo;re doing on this page are simple and/or silly, but the idea is
-to practice on easy things before getting to doing graphics.</p>
+<p>You should not use the Canvas SVG Path functionality.</p>
 
-<p>For this page, all of the JavaScript code is in a single file
-called &ldquo;three.js&rdquo; (not to be confused with the three.js library)
-that we&rsquo;ll put everything for all the boxes in. Again, be sure
-to read along in the code what you see in the web page.</p>
+<h2 id="exercise-1-a-simple-picture">Exercise 1: A Simple Picture</h2>
 
-<p>Like the previous pages, this one doesn&rsquo;t ask you to do much other
-than to read. However, you might want to change things to see
-what happens when you make changes. Remember, if you mess things
-up, you can always use GIT to help you get back to an older version.</p>
+<p>Make a picture that contains:</p>
 
-<h2 id="box-1-changing-the-page">Box 1: Changing the page</h2>
+<ol>
+<li><p>a circle</p></li>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<li><p>a triangle</p></li>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box3-1.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<li><p>a capsule (half circles connected by straight lines)</p></li>
 
-<h2 id="box-2-button-events">Box 2: Button Events</h2>
+<li><p>a sawtooth / mountain (two triangles sticking out of a rectangle)</p></li>
+</ol>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>For each, have a solid line border and a filled color.</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box3-2.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p>Try to make it look like this example. Note: This is made using SVG. Do not try to read the SVG, and in particular, don&rsquo;t copy the paths. You don&rsquo;t have to match it exactly, but get the 4 basic shapes. And do it in Canvas, by editing the <code>wb2_pg3_ex1</code> function in the <code>for_students/page3.js</code> file.</p>
 
-<h2 id="box-3-slider-events">Box 3: Slider Events</h2>
+<p><link rel="stylesheet" type="text/css" href="/for_students/a02.css">
+<script src="/for_students/page3.js" type="module"></script>
+<svg width="225px" height="175px">
+    <circle cx="50" cy="50" r="25" style="width:3; fill: #F8E; stroke:#846; stroke-width:5"></circle>
+    <polygon points="25,150, 75,150, 50,110" style="stroke-width:5; fill:sandybrown; stroke:darkgoldenrod" />
+    <path d="M 125 25 L 175 25 A 25 25 0 0 1 175 75 L 125 75 A 25 25 0 0 1 125 25 Z" style="stroke:darkred; stroke-width: 5; fill:lightpink" />
+    <path d="M 100 150 L 200 150 L 200 125 L 175 100 L 150 125 L 125 100 L 100 125 Z" style="stroke:black; fill:gray; stroke-width:5" />
+</svg></p>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>Put your picture in this Canvas element (it&rsquo;s id is &ldquo;canvas1&rdquo; and it is 400x200).</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box3-3.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<canvas id="canvas1" width="400px" height="200px"></canvas>
 
-<h2 id="box-4-sliders-as-outputs">Box 4: Sliders as Outputs</h2>
+<h2 id="exercise-2-your-own-picture">Exercise 2: Your own Picture</h2>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>Make any picture you want to show off how well you&rsquo;ve learned Canvas. Make it by editing the <code>wb2_pg3_ex2</code> function in the <code>A02_p3.js</code> file. The Canvas element has id &ldquo;canvas2&rdquo; and size 500x500.</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box3-4.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p>You can draw anything you want. But please show off that you know how to: use styles, use transparency, use drawing order, and use complicated shapes. The grader will check that Canvas has some of those things.</p>
 
-<h2 id="box-5-animation-and-requestanimationframe">Box 5: Animation and RequestAnimationFrame</h2>
+<p>Also, you must &ldquo;color in the lines&rdquo; - don&rsquo;t change the HTML file (the canvas is 500x500). And just make a static picture - no interaction or animation. We&rsquo;ll learn about that on the next page. This is not the end of this workbook - be sure to go on to the other pages when you&rsquo;re done.</p>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>There is a chance for a <strong>bonus point</strong> if you make a picture that is particularly creative and shows off that you can use all the Canvas features we discussed.</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box3-5.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<canvas id="canvas2" width="500px" height="500px"></canvas>
 
-<h2 id="box-6-animation-loop-programming">Box 6: Animation Loop Programming</h2>
-
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
-
-<iframe onload="resizeIframe(this)" src="/boxes/box3-6.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
-
-<h2 id="box-7-one-more-silly-example">Box 7: One More Silly Example</h2>
-
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
-
-<iframe onload="resizeIframe(this)" src="/boxes/box3-7.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
-
-<h2 id="summary">Summary:</h2>
-
-<p>Some important things in this lesson:
-<ul>
-    <li>The difference between event-driven and polling (animation-loop) programming</li>
-    <li>How we do animation loops and even handling in JavaScript for HTML</li>
-    <li>How we make use of the values of input elements (sliders, buttons) in animation loop programs</li>
-    <li>How we look at the &ldquo;clock time&rdquo; to set the rate at which things change</li>
-</ul>
-Next week, we&rsquo;ll use these ideas for graphics programming. But for this week, go on to <a href="/docs/four/">page 4</a> where you can try this out for yourself.</p>
+<p>Now you can go on to <a href="/docs/four/">page 4</a></p>
 </article>
 
       
@@ -211,16 +166,10 @@ Next week, we&rsquo;ll use these ideas for graphics programming. But for this we
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#page-3-more-javascript">Page 3: More JavaScript</a>
+<li><a href="#page-3-canvas-drawing-your-turn">Page 3: Canvas Drawing: Your Turn</a>
 <ul>
-<li><a href="#box-1-changing-the-page">Box 1: Changing the page</a></li>
-<li><a href="#box-2-button-events">Box 2: Button Events</a></li>
-<li><a href="#box-3-slider-events">Box 3: Slider Events</a></li>
-<li><a href="#box-4-sliders-as-outputs">Box 4: Sliders as Outputs</a></li>
-<li><a href="#box-5-animation-and-requestanimationframe">Box 5: Animation and RequestAnimationFrame</a></li>
-<li><a href="#box-6-animation-loop-programming">Box 6: Animation Loop Programming</a></li>
-<li><a href="#box-7-one-more-silly-example">Box 7: One More Silly Example</a></li>
-<li><a href="#summary">Summary:</a></li>
+<li><a href="#exercise-1-a-simple-picture">Exercise 1: A Simple Picture</a></li>
+<li><a href="#exercise-2-your-own-picture">Exercise 2: Your own Picture</a></li>
 </ul></li>
 </ul>
 </nav>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 1: HTML Basics | CS559: Workbook 1</title>
+<title>One | CS559: Workbook 2</title>
 
 
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
@@ -30,7 +30,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav>
 <h2 class="book-brand">
-  <a href="">CS559: Workbook 1</a>
+  <a href="">CS559: Workbook 2</a>
 </h2>
 
 
@@ -51,10 +51,12 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/"><strong>Getting Started</strong></a></li>
-<li><a href="/docs/one/">Page 1: HTML Basics</a></li>
-<li><a href="/docs/two/">Page 2: JavaScript Basics</a></li>
-<li><a href="/docs/three/">Page 3: More JavaScript</a></li>
-<li><a href="/docs/four/">Page 4: Practice Yourself</a></li>
+<li><a href="/docs/one/">Page 1: Web Graphics APIs</a></li>
+<li><a href="/docs/two/">Page 2: Drawing with Canvas</a></li>
+<li><a href="/docs/three/">Page 3: Canvas Drawing: Your Turn</a></li>
+<li><a href="/docs/four/">Page 4: Animation and Interaction with Canvas</a></li>
+<li><a href="/docs/five/">Page 5: Try Canvas Programming</a></li>
+<li><a href="/docs/six/">Page 6: Where did I draw?</a></li>
 </ul>
 
 
@@ -83,148 +85,198 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Page 1: HTML Basics</strong>
+  <strong>One</strong>
 </header>
 
       
 <article class="markdown">
 
-<h1 id="page-1-html-basics">Page 1: HTML Basics</h1>
+<h1 id="page-1-web-graphics-apis">Page 1: Web Graphics APIs</h1>
 
-<p>You should have already looked at the <a href="/">index</a> page.</p>
+<p>The kind of graphics we will be doing is
+&ldquo;object-based&rdquo; or &ldquo;vector&rdquo; or &ldquo;primitive-based&rdquo; graphics, as opposed
+to &ldquo;image-based&rdquo; graphics.
+Read <a href="http://graphics.cs.wisc.edu/WP/cs559-fall2014/2014/08/29/image-based-graphics-vs-object-based-graphics/">this tutorial</a> about the differences.
+The tutorial is from 2014, but it still applies.
+Except that in class, we won&rsquo;t be doing much image-based graphics.</p>
 
-<p>For this workbook page, you don&rsquo;t have to do anything other than read. We encourage you to make changes in the box files (so you can see the effects), but we are simply going to assume that you&rsquo;ve done the &ldquo;work&rdquo;. Throughout the page, there are suggestions for things to try to make sure that you understand how things work.</p>
+<p>For most of this class, we will be doing non-image-based graphics.
+The other category is harder to name. One term we can use is &ldquo;object-based&rdquo;,
+but the basic idea is that we create pictures not by describing the color
+of each pixel (as image-based graphics would do), but rather by using
+a set of &ldquo;primitives&rdquo; (basic objects) that we put together to make pictures.</p>
 
-<p>For CS559, we will assume that you know the basics of how to make web pages so that you can make pages to put your graphics programs on. We will only need some basic HTML and CSS stuff.</p>
+<p>For doing object-based (2D) graphics on web pages, there are two main APIs: <em>Canvas</em> and <em>SVG</em>.
+In class, we&rsquo;ll mainly be using Canvas, but we will look at SVG as well.
+For the purpose of this workbook, SVG is important because it represents a
+very different kind of API than Canvas. They both do similar things,
+but they do it in very different ways.</p>
 
-<p>If you aren&rsquo;t already familiar with HTML, please find a resource on the web and learn about the basics. Here are some suggestions:</p>
-
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">Mozilla Getting Started with HTML</a> - this is the very most basic stuff.</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">Mozilla HTML Learning Guide</a> - this is a more complete guide, with many things that you won&rsquo;t need for class.</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">Mozilla Tutorial on CSS</a> - you only need the most basic parts of it.</li>
-</ul>
-
-<h2 id="some-thoughts-on-html-in-cs559">Some thoughts on HTML in CS559</h2>
-
-<p>We won&rsquo;t use any fancy HTML stuff for class - we will only make basic pages that we will put graphics on. However, you will need to know the basics so that you can read and write the workbooks.</p>
-
-<p>Because we are trying to keep the HTML simple, the pages for this class might look bit <strong>ugly</strong>. You can make nice looking things with HTML, but it takes effort.</p>
-
-<p>We are using a site generator (<a href="https://gohugo.io">hugo</a>) to make assembling the web pages and boxes and get the basic layouting and navigation features easier compared to writing HTML files by hand.
-All html files besides the boxes are generated using this framework, which makes reading and understanding their source code a little harder (you don&rsquo;t have to take a look at them, but you are welcome to if you are interested).
-Normally, we would use additional stylesheets and fancier page features to make things look nicer. However, to keep things fairly simple for class, we are just using the basics.</p>
-
-<p>To make sure that the boxes are easy to find, understand, and modify, we put them in separate files in the <code>boxes/</code> folder.
-They are also written in basic HTML and CSS by hand and then imported into the pages.
-You can easily find and read them to learn and practice HTML and CSS.</p>
-
-<p>Typically, we would use tools to help us write HTML, rather than just typing it in an editor or IDE. But for class, what we need to do within the boxes is so simple, we&rsquo;re better off just using the same IDE that we use for programming.</p>
-
-<h2 id="the-basic-elements-of-html-you-should-know">The Basic Elements of HTML you should know</h2>
-
-<p>A key idea is that a document (a web page) is a tree of parts. The overall document is the root of the tree. For example, the document may contain paragraphs, which contain sentences, which contain words, etc. Each part is known as an element. The tree of elements is known as the Document Object Model (or DOM).</p>
-
-<p>The basic idea of an HTML document is that we represent a tree of parts (elements) in a text file. In the text file, we use &ldquo;tags&rdquo; as special markings to tell the browser how to make elements from the text. Most tags come in matching pairs - you have a first tag to &ldquo;start&rdquo; the element, and a second tag to &ldquo;end&rdquo; it.</p>
-
-<p>Some important elements that you will need to know about for class:</p>
+<p>The distinction we can make for graphics APIs is between <em>immediate</em> vs. <em>retained</em> mode.</p>
 
 <ul>
-<li>comments - things between <code>&lt;!--</code> and <code>--&gt;</code> are ignored by the browser (so you should read them)</li>
-<li><code>&lt;html&gt;</code> - this is the &ldquo;root&rdquo; of the tree, representing the whole document</li>
-<li><code>&lt;body&gt;</code> - this represents the container where the content of the document goes</li>
-<li>Headers (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> etc.) - these are heading lines</li>
-<li><code>&lt;div&gt;</code> - these are &ldquo;divisions&rdquo; of the document - boxes that contain things. They are useful for creating hierarchy.</li>
-<li><code>&lt;span&gt;</code> - contain a &ldquo;run&rdquo; of text (or other objects). They are useful for creating hierarchy and grouping things together so that you can work with them.</li>
-<li><code>&lt;p&gt;</code> - paragraphs (a bunch of text)</li>
-<li><code>&lt;ul&gt;</code> - unordered lists and <code>&lt;ol&gt;</code> ordered (numbered) lists. Lists should contain <code>&lt;li&gt;</code> list item elements.</li>
-<li><code>&lt;code&gt;</code> - this is used for when we put source code (like HTML or JavaScript) onto a web page for someone to read. We do not use <code>&lt;code&gt;</code> elements for code the computer is supposed to run!</li>
-<li><code>&lt;script&gt;</code> - these are the elements that contain the code that the browser is actually supposed to run (usually JavaScript).</li>
+<li><p><strong>Immediate</strong> mode APIs draw immediately. When you make a function call to create, for example, a rectangle, the rectangle gets drawn immediately. The system colors the pixels right away. In practice, you may not see the changes immediately (more on that in a bit). But, when you make a drawing call (like to the rectangle function), conceptually, the system colors the pixels. It forgets why it colored the pixels after it&rsquo;s done. <em>Canvas</em> is an immediate mode API.</p></li>
+
+<li><p><strong>Retained</strong> mode APIs create a list of objects that are drawn on demand. Function calls create objects in some storage (e.g., a list of objects), and eventually this list is drawn. The system remembers the objects, and refers to these when coloring the pixels. <em>SVG</em> is a retained mode API. Retained mode APIs are sometimes called <em>display-list</em> APIs since they keep a list of things to display.</p></li>
 </ul>
 
-<p>You may also notice that some special characters show up in a weird way. If a character might be interpreted by the web browser as being part of HTML, we need to encode it as an <em>entity</em>. So, for example, if I want to write the left angle bracket <code>&lt;</code> I need to put <code>&amp;lt;</code> into the HTML.</p>
+<p>This distinction will become clearer as we work through some examples.</p>
 
-<p>Usually in workbooks, separate examples will be in boxes like you will see below. These are stored as separated HTML files in the <code>boxes/</code> folder.
-You should read each box in the workbook page in the web browser to see how it looks.
-You should also read the &ldquo;source&rdquo; (html file and css files) for each box, to see how they work.</p>
-
-<p>Part of the idea of this page is to get you used to looking inside of HTML files when you read (and work on) workbooks. So, even if you know HTML well, please have a look at the source files.</p>
-
-<h2 id="box-1-identifying-elements">Box 1: Identifying Elements</h2>
+<h2 id="box-1-graphics-elements">Box 1: Graphics Elements</h2>
 
 <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
+  
+  
+  (function() {
+    function resizeIframe(obj) {
+      obj.style.height = (obj.contentWindow.document.body.offsetHeight + 32) + "px";
+    }
+    let oldOnload = window.onload;
+    let resizeFunc = function() {
+      if (oldOnload) {
+        oldOnload();
+      }
+      let frames = document.getElementsByTagName("iframe");
+      for (let iframe of frames) {
+        resizeIframe(iframe);
+      }
+    }
+    resizeFunc.resizeIframe = "set";
+    if (!window.onload || window.onload.resizeIframe !== "set") {
+      window.onload = resizeFunc;
+      
+      window.addEventListener("resize", function() {
+        resizeFunc();
+      });
+    }
+    
+  })();
 </script>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box1-1.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<iframe onload="resizeIframe(this)" src="/for_students/box1-1.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
 
-<h2 id="box-2-styling">Box 2: Styling</h2>
+<h2 id="box-2-drawing-2-ways">Box 2: Drawing 2 ways</h2>
 
 <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
+  
+  
+  (function() {
+    function resizeIframe(obj) {
+      obj.style.height = (obj.contentWindow.document.body.offsetHeight + 32) + "px";
+    }
+    let oldOnload = window.onload;
+    let resizeFunc = function() {
+      if (oldOnload) {
+        oldOnload();
+      }
+      let frames = document.getElementsByTagName("iframe");
+      for (let iframe of frames) {
+        resizeIframe(iframe);
+      }
+    }
+    resizeFunc.resizeIframe = "set";
+    if (!window.onload || window.onload.resizeIframe !== "set") {
+      window.onload = resizeFunc;
+      
+      window.addEventListener("resize", function() {
+        resizeFunc();
+      });
+    }
+    
+  })();
 </script>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box1-2.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<iframe onload="resizeIframe(this)" src="/for_students/box1-2.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
 
-<h2 id="box-3-style-sheets">Box 3: Style Sheets</h2>
+<h2 id="box-3-moving-squares">Box 3: Moving Squares</h2>
 
 <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
+  
+  
+  (function() {
+    function resizeIframe(obj) {
+      obj.style.height = (obj.contentWindow.document.body.offsetHeight + 32) + "px";
+    }
+    let oldOnload = window.onload;
+    let resizeFunc = function() {
+      if (oldOnload) {
+        oldOnload();
+      }
+      let frames = document.getElementsByTagName("iframe");
+      for (let iframe of frames) {
+        resizeIframe(iframe);
+      }
+    }
+    resizeFunc.resizeIframe = "set";
+    if (!window.onload || window.onload.resizeIframe !== "set") {
+      window.onload = resizeFunc;
+      
+      window.addEventListener("resize", function() {
+        resizeFunc();
+      });
+    }
+    
+  })();
 </script>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box1-3.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<iframe onload="resizeIframe(this)" src="/for_students/box1-3.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
 
-<h2 id="box-4-color">Box 4: Color</h2>
+<h2 id="box-4-understanding-svg">Box 4: Understanding SVG</h2>
 
 <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
+  
+  
+  (function() {
+    function resizeIframe(obj) {
+      obj.style.height = (obj.contentWindow.document.body.offsetHeight + 32) + "px";
+    }
+    let oldOnload = window.onload;
+    let resizeFunc = function() {
+      if (oldOnload) {
+        oldOnload();
+      }
+      let frames = document.getElementsByTagName("iframe");
+      for (let iframe of frames) {
+        resizeIframe(iframe);
+      }
+    }
+    resizeFunc.resizeIframe = "set";
+    if (!window.onload || window.onload.resizeIframe !== "set") {
+      window.onload = resizeFunc;
+      
+      window.addEventListener("resize", function() {
+        resizeFunc();
+      });
+    }
+    
+  })();
 </script>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box1-4.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<iframe onload="resizeIframe(this)" src="/for_students/box1-4.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
 
-<h2 id="box-5-layout">Box 5: Layout</h2>
+<h2 id="summary-two-apis">Summary: Two APIs</h2>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>On this page, you got to see two different ways to do graphics
+on web pages. One using <em>Canvas</em> (an immediate mode API), and the
+other using <em>SVG</em> (a retained mode API).</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box1-5.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p>We&rsquo;ll learn to draw something more interesting than a rectangle
+using Canvas in the next pages.</p>
 
-<h2 id="box-6-button-elements">Box 6: Button Elements</h2>
+<p>However, in order to learn more about SVG, you need to look at
+other tutorials. You can start with the tutorials from
+CS559 in 2014. Here are the first two, there will be more for concepts
+in the coming weeks:</p>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<ul>
+<li>Tutorial: <a href="http://graphics.cs.wisc.edu/WP/cs559-fall2014/2014/08/30/getting-started-with-svg/">SVG:1 getting started</a></li>
+<li>Tutorial: <a href="http://graphics.cs.wisc.edu/WP/cs559-fall2014/2014/09/04/svg2-coordinate-systems/">SVG:2 coordinates</a></li>
+</ul>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box1-6.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p>It seems like in modern browsers, you don&rsquo;t need to use the namespace in html.
+We do use it in the code (see the <code>createElementNS</code> usage in boxes above).</p>
 
-<h2 id="box-7-slider-elements">Box 7: Slider Elements</h2>
-
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
-
-<iframe onload="resizeIframe(this)" src="/boxes/box1-7.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
-
-<h2 id="summary">Summary</h2>
-
-<p>Hopefully, the experience of trying to read (and maybe modify) this web page will give you a sense of what it&rsquo;s like to work with a workbook and to read HTML (so you can put some things around your programs as you start to write them).</p>
-
-<p>Now you&rsquo;re ready to go on to <a href="/docs/two/">page 2</a> where we&rsquo;ll start to do some JavaScript programming.</p>
+<p>We will go on to talk more about Canvas on <a href="/docs/two/">page 2</a>.</p>
 </article>
 
       
@@ -238,18 +290,13 @@ You should also read the &ldquo;source&rdquo; (html file and css files) for each
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#page-1-html-basics">Page 1: HTML Basics</a>
+<li><a href="#page-1-web-graphics-apis">Page 1: Web Graphics APIs</a>
 <ul>
-<li><a href="#some-thoughts-on-html-in-cs559">Some thoughts on HTML in CS559</a></li>
-<li><a href="#the-basic-elements-of-html-you-should-know">The Basic Elements of HTML you should know</a></li>
-<li><a href="#box-1-identifying-elements">Box 1: Identifying Elements</a></li>
-<li><a href="#box-2-styling">Box 2: Styling</a></li>
-<li><a href="#box-3-style-sheets">Box 3: Style Sheets</a></li>
-<li><a href="#box-4-color">Box 4: Color</a></li>
-<li><a href="#box-5-layout">Box 5: Layout</a></li>
-<li><a href="#box-6-button-elements">Box 6: Button Elements</a></li>
-<li><a href="#box-7-slider-elements">Box 7: Slider Elements</a></li>
-<li><a href="#summary">Summary</a></li>
+<li><a href="#box-1-graphics-elements">Box 1: Graphics Elements</a></li>
+<li><a href="#box-2-drawing-2-ways">Box 2: Drawing 2 ways</a></li>
+<li><a href="#box-3-moving-squares">Box 3: Moving Squares</a></li>
+<li><a href="#box-4-understanding-svg">Box 4: Understanding SVG</a></li>
+<li><a href="#summary-two-apis">Summary: Two APIs</a></li>
 </ul></li>
 </ul>
 </nav>

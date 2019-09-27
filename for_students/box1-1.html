@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style559.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="a02.css" /
+</header>
+
+<body>
+
+    <div id="box1" class="examplebox">
+        <p>
+            Web pages are made up of elements - like paragraphs, headings, and buttons.
+            To do graphics, we make special elements that give us a rectangular region that
+            we can draw in.
+            For the Canvas API (and actually some other APIs), we create "canvas" elements
+            using the "canvas" tag.
+            For SVGs, we create "svg" elements using the SVG tag.
+        </p>
+        <p>
+            Here we made one of each, side by side (look at the HTML source in <code>for_students/box1-1.html</code>):
+            <div>
+                <canvas id="canvas1" width="150px" height="100px" style="border:2px solid #F00"></canvas>
+                <svg id="svg1" width="150px" height="100px" style="border:2px solid #F00"></svg>
+            </div>
+            Note that these are normal HTML elements. We can give them ids (and classes),
+            as well as styling them (here they have red borders).
+            In fact, we can use CSS to style them - if you look at the style sheet this and the other HTML files on this page use
+            <code>for_students/a02.css</code>, you will see that all of the other ones have a thin black border.
+        </p>
+        <p>
+            By themselves, these elements are pretty boring - we need to write some
+            JavaScript to make them more interesting.
+            SVGs will have an alternative, but we'll get to that later.
+        </p>
+        <p>
+            It may not be obvious in these examples, but in both SVG and Canvas,
+            Y is measured downwards - this is different than you might be
+            used to. We'll come back to talk about this later.
+        </p>
+    </div>
+
+</body>

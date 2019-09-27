@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 4: Practice Yourself | CS559: Workbook 1</title>
+<title>Four | CS559: Workbook 2</title>
 
 
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
@@ -30,7 +30,7 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-menu fixed">
       <nav>
 <h2 class="book-brand">
-  <a href="">CS559: Workbook 1</a>
+  <a href="">CS559: Workbook 2</a>
 </h2>
 
 
@@ -51,10 +51,12 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/"><strong>Getting Started</strong></a></li>
-<li><a href="/docs/one/">Page 1: HTML Basics</a></li>
-<li><a href="/docs/two/">Page 2: JavaScript Basics</a></li>
-<li><a href="/docs/three/">Page 3: More JavaScript</a></li>
-<li><a href="/docs/four/">Page 4: Practice Yourself</a></li>
+<li><a href="/docs/one/">Page 1: Web Graphics APIs</a></li>
+<li><a href="/docs/two/">Page 2: Drawing with Canvas</a></li>
+<li><a href="/docs/three/">Page 3: Canvas Drawing: Your Turn</a></li>
+<li><a href="/docs/four/">Page 4: Animation and Interaction with Canvas</a></li>
+<li><a href="/docs/five/">Page 5: Try Canvas Programming</a></li>
+<li><a href="/docs/six/">Page 6: Where did I draw?</a></li>
 </ul>
 
 
@@ -83,67 +85,152 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Page 4: Practice Yourself</strong>
+  <strong>Four</strong>
 </header>
 
       
 <article class="markdown">
 
-<h1 id="page-4-practice-yourself">Page 4: Practice Yourself</h1>
+<h1 id="page-4-animation-and-interaction-with-canvas">Page 4: Animation and Interaction with Canvas</h1>
 
-<p>So far, this workbook has mainly been you reading code (and html).
-Hopefully, you also took the opportunity to
-do some extra reading (for example, reading some JavaScript references).
-And some tinkering: one way to understand the programs is to try to
-make changes to see how things work.</p>
+<p>Back on <a href="/docs/one/">page one</a>, we saw animation with Canvas and SVG,
+and interaction with SVG. Now we will look at animation and
+interaction with Canvas in more detail.</p>
 
-<p>To help you check that you are getting the concepts, here are a few
-little programming things to try. In each box, we will ask you to do
-something. You should edit the <code>boxes/4-1.html</code> to <code>boxes/4-3.html</code> and <code>boxes/four.js</code> files
-accordingly to do it. These will be the things that the grader will check.</p>
+<p>The tricky thing is that with Canvas, we don&rsquo;t store the objects.
+That means we don&rsquo;t have anything to change - it&rsquo;s up to the program
+to keep track of things and adjust them accordingly.
+Similarly, for interactions, there are no objects to generate events.
+The graphics &ldquo;objects&rdquo; only exist in our program, so we are responsible
+for creating events.</p>
 
-<p>These little exercises are simple - and not very interesting.
-But make sure you understand what you are doing, since they will
-be the building blocks for doing more interesting things later.</p>
+<p>We&rsquo;ll look at some implications of needing to represent objects in
+our own programs on this page.</p>
 
-<p>And don&rsquo;t forget to edit the <code>README.md</code> file
-(if we don&rsquo;t know your WiscID and GitHub ID, we can&rsquo;t give you credit).</p>
+<h2 id="animation-with-canvas">Animation with Canvas</h2>
 
-<p>And of course, to correctly use GIT to commit your work and push it
-back to the repository on GitHub.</p>
+<p>When we animate, we need to change the image for each &ldquo;frame&rdquo;.
+With SVG, we modify the elements that change - and the picture gets
+updated accordingly.
+With Canvas, we have to update the picture ourselves.</p>
 
-<p>Note that for grading, you will get full points if you get at least
-a partially right program for each exercise.</p>
+<p>In general, we will do this by (1) clearing the canvas and (2) redrawing
+everything. Notice that this is wasteful: we redraw things that didn&rsquo;t change.
+If we really care about performance, we would try to figure out what
+changed and only change those parts.
+With graphics, figuring out what changed and only changing those parts can be
+hard (especially with 3D).
+For example, moving one object might let us see new things behind.
+The complexity of keeping track of what has changed may outweigh the extra
+effort to redraw things that didn&rsquo;t change.</p>
 
-<h2 id="box-1-sliders">Box 1: Sliders</h2>
+<p>In almost all cases in this class, we will just clear the whole canvas
+and draw everything. We&rsquo;ll just be careful to try to make &ldquo;drawing everything&rdquo;
+as fast as possible (which can be easier, since we don&rsquo;t need to think about
+what not to draw).</p>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>So, if you notice that things are wasteful, you&rsquo;re being observant.</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box4-1.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p>Here&rsquo;s an example (that we will come back to later):</p>
 
-<h2 id="box-2-start-stop">Box 2: Start Stop</h2>
+<p><link rel="stylesheet" type="text/css" href="/for_students/a02.css">
+<script src="/for_students/page4.js" type="module"></script>
+<canvas id="box1canvas" width="240px" height="90px"></canvas></p>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p><svg id="box1svg" width="240px" height="90px"></svg></p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box4-2.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p>Notice that we can use the same animation loop for both elements.
+For Canvas, we clear and redraw everything.
+For SVG, we only change the things that move. It may or may not decide
+to redraw everything.</p>
 
-<h2 id="box-3-throb-not-blink">Box 3: Throb, not blink</h2>
+<h2 id="events-for-canvas">Events for Canvas</h2>
 
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+<p>With SVG, because the graphics elements are HTML elements, we can assign events to them.
+In this example, I will handle all the <code>onclick</code> events for each of the objects.
+Try clicking on the rectangles - you can even click on the moving one!</p>
 
-<iframe onload="resizeIframe(this)" src="/boxes/box4-3.html" width="100%" height="100%" scrolling="no" frameborder="0" style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+<p><svg id="box2svg" width="240px" height="90px"></svg></p>
+
+<p>With Canvas, this is much trickier, because the only element is the
+Canvas element itself! We need to figure out where the mouse is,
+and then check each object to see if it should get the event, and then
+do the appropriate thing.</p>
+
+<p>To make this easier, we&rsquo;ll change how we write the code.
+If you look at the drawing function for the previous example,
+the rectangles are not actually represented (except in the code).
+Instead, we&rsquo;ll make objects for each rectangle so we&rsquo;ll have a list
+of them. We&rsquo;ll use this list for drawing, and we&rsquo;ll also use this
+list for doing other things.</p>
+
+<p>The list of objects is sometimes called a <strong>display list</strong>.</p>
+
+<canvas id="box2canvas" width="240px" height="90px"></canvas>
+
+<p>While the display list idea is simple - keep a list of graphics objects -
+it is worth looking at the implementation since it uses a lot of
+JavaScript tricks.</p>
+
+<p>If you look at the code, you&rsquo;ll see a drawing routine that takes a
+list of rectangles - and draws them all. The rectangles are stored
+as JavaScript objects - which might seem a little weird if you&rsquo;re
+used to objects in languages like Java or C++. These are generic
+objects - we never define a class. We just stick the member values
+we want into them. So, for example, the line:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">box2rects</span>.<span style="color:#a6e22e">push</span>({<span style="color:#e6db74">&#34;x&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;y&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35</span>,<span style="color:#e6db74">&#34;w&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>,<span style="color:#e6db74">&#34;h&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>,<span style="color:#e6db74">&#34;color&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;black&#34;</span>});
+</code></pre></div>
+
+<p>makes a new rectangle object (with <code>x=0</code>, <code>y=35</code>, etc.) and puts it
+at the end of the <code>box2rects</code> array.</p>
+
+<p>Once we have the display list, it is relatively straightforward to
+get the desired event behavior. We have one event handler for the
+Canvas element. This has to figure out where the mouse is
+(which requires us to know where the Canvas element is).
+The function <code>clickRectList</code> then checks this position against all of the rectangles.</p>
+
+<p>Fortunately, all of the objects are rectangles, and checking to see if the mouse position is inside of them is easy.</p>
+
+<p>This code is a little bit tricky - so take the time to understand it.</p>
+
+<h2 id="interaction-without-events">Interaction without Events</h2>
+
+<p>As long as we have an animation loop running, we can get by without
+events for some things by polling: checking the input device on
+every iteration.</p>
+
+<p>Move the mouse around inside this canvas:</p>
+
+<canvas id="box3canvas" height="300px" width="300px"></canvas>
+
+<p>And of course, don&rsquo;t forget a  <button id="box3but">button</button></p>
+
+<p>Make sure you understand that example (including transparency), but here&rsquo;s a different version (try clicking):</p>
+
+<canvas id="box3fun" height="300px" width="300px"></canvas>
+
+<p>Be sure to understand how this works - including how we know if the mouse is pressed.
+Notice how each rectangle not only stores it&rsquo;s position, but also its velocity.
+And also notice that rectangles do get removed - we don&rsquo;t just keep making more.</p>
+
+<p>You will be required to use all of these ideas on the next page.</p>
+
+<h2 id="summary-interaction-and-animation-with-canvas">Summary: Interaction and Animation with Canvas</h2>
+
+<p>There are a few big ideas on this page:</p>
+
+<ol>
+<li>We make <em>display lists</em> to represent graphics objects. If the underlying API does not do it for us, we have to manage it ourselves.</li>
+<li>The web browser likes to work in an event-driven model. If we want to do things in a polling (animation-loop) style, we have to adapt.</li>
+</ol>
+
+<p>These are concepts we&rsquo;ll use a lot as we make more complicated graphics programs.</p>
+
+<p>Make sure you understand the code! It not only shows the concepts, but it also uses a lot of JavaScript idioms.</p>
+
+<p>On <a href="/docs/five/">page 5</a> we&rsquo;ll let you try doing some of this stuff on your own.</p>
 </article>
 
       
@@ -157,11 +244,12 @@ a partially right program for each exercise.</p>
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#page-4-practice-yourself">Page 4: Practice Yourself</a>
+<li><a href="#page-4-animation-and-interaction-with-canvas">Page 4: Animation and Interaction with Canvas</a>
 <ul>
-<li><a href="#box-1-sliders">Box 1: Sliders</a></li>
-<li><a href="#box-2-start-stop">Box 2: Start Stop</a></li>
-<li><a href="#box-3-throb-not-blink">Box 3: Throb, not blink</a></li>
+<li><a href="#animation-with-canvas">Animation with Canvas</a></li>
+<li><a href="#events-for-canvas">Events for Canvas</a></li>
+<li><a href="#interaction-without-events">Interaction without Events</a></li>
+<li><a href="#summary-interaction-and-animation-with-canvas">Summary: Interaction and Animation with Canvas</a></li>
 </ul></li>
 </ul>
 </nav>

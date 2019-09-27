@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docs on CS559: Workbook 1</title>
+    <title>Docs on CS559: Workbook 2</title>
     <link>/docs/</link>
-    <description>Recent content in Docs on CS559: Workbook 1</description>
+    <description>Recent content in Docs on CS559: Workbook 2</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Page 1: HTML Basics</title>
-      <link>/docs/one/</link>
+      <title></title>
+      <link>/docs/five/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/one/</guid>
-      <description>Page 1: HTML Basics You should have already looked at the index page.
-For this workbook page, you don&amp;rsquo;t have to do anything other than read. We encourage you to make changes in the box files (so you can see the effects), but we are simply going to assume that you&amp;rsquo;ve done the &amp;ldquo;work&amp;rdquo;. Throughout the page, there are suggestions for things to try to make sure that you understand how things work.</description>
+      <guid>/docs/five/</guid>
+      <description>Page 5: Try Canvas Programming This workbook has two programming exercises.
+The first one is required. Completing it correctly is part of completing the workbook.
+The second one is optional. Doing it correctly gets you bonus points. You cannot get bonus points for exercise 2 if you don&amp;rsquo;t have a solution to exercise 1.
+You should do these exercises by editing the file for_students/page5.js. We&amp;rsquo;ve actually started things for you.</description>
     </item>
     
     <item>
-      <title>Page 2: JavaScript Basics</title>
-      <link>/docs/two/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/two/</guid>
-      <description>Page 2: JavaScript Basics You should have done page 1 already and are used to the idea of using a workbook and looking at the HTML. Now we&amp;rsquo;ll add some JavaScript programming.
-This page is less about JavaScript, and more to check that you understand some of the details as to how we connect JavaScript programs to web pages.
-A secondary goal of this page is to make sure that you know how to use the tools for JavaScript programming.</description>
-    </item>
-    
-    <item>
-      <title>Page 3: More JavaScript</title>
-      <link>/docs/three/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/three/</guid>
-      <description>Page 3: More JavaScript On the previous page, we saw a little bit of JavaScript and saw how it can be attached to a web page.
-On this page, we&amp;rsquo;ll continue. We&amp;rsquo;ll use JavaScript to change page content, and make buttons and sliders do things.
-The real goal is to learn the ideas of event-driven and animation-loop-driven programming. Soon, we&amp;rsquo;ll use these two programming styles to write graphics programs. But for now, we&amp;rsquo;ll just use them to do silly things with the contents of a simple web page.</description>
-    </item>
-    
-    <item>
-      <title>Page 4: Practice Yourself</title>
+      <title></title>
       <link>/docs/four/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/four/</guid>
-      <description>Page 4: Practice Yourself So far, this workbook has mainly been you reading code (and html). Hopefully, you also took the opportunity to do some extra reading (for example, reading some JavaScript references). And some tinkering: one way to understand the programs is to try to make changes to see how things work.
-To help you check that you are getting the concepts, here are a few little programming things to try.</description>
+      <description>Page 4: Animation and Interaction with Canvas Back on page one, we saw animation with Canvas and SVG, and interaction with SVG. Now we will look at animation and interaction with Canvas in more detail.
+The tricky thing is that with Canvas, we don&amp;rsquo;t store the objects. That means we don&amp;rsquo;t have anything to change - it&amp;rsquo;s up to the program to keep track of things and adjust them accordingly.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/one/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/one/</guid>
+      <description>Page 1: Web Graphics APIs The kind of graphics we will be doing is &amp;ldquo;object-based&amp;rdquo; or &amp;ldquo;vector&amp;rdquo; or &amp;ldquo;primitive-based&amp;rdquo; graphics, as opposed to &amp;ldquo;image-based&amp;rdquo; graphics. Read this tutorial about the differences. The tutorial is from 2014, but it still applies. Except that in class, we won&amp;rsquo;t be doing much image-based graphics.
+For most of this class, we will be doing non-image-based graphics. The other category is harder to name. One term we can use is &amp;ldquo;object-based&amp;rdquo;, but the basic idea is that we create pictures not by describing the color of each pixel (as image-based graphics would do), but rather by using a set of &amp;ldquo;primitives&amp;rdquo; (basic objects) that we put together to make pictures.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/six/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/six/</guid>
+      <description>Page 6: Where did I draw? There is one detail we glossed over: with either Canvas or SVG, we referred to positions (such as the center of a circle, or corner of a rectangle) using two numbers. What do these mean?
+Notice that they don&amp;rsquo;t always mean the same thing: here are two SVG elements, each with a circle at position (30, 30). Look in the HTML (for_students/box6-1.html) - you&amp;rsquo;ll see the exact same line is repeated twice.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/three/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/three/</guid>
+      <description>Page 3: Canvas Drawing: Your Turn Now that you&amp;rsquo;ve learned to draw, you&amp;rsquo;ll get to draw something!
+There are two exercises - you must make a picture for each. In the first one, you have to make the picture you&amp;rsquo;re asked for. In the second one, you can make anything you want.
+You should do these exercises by editing the file for_students/page3.js. We&amp;rsquo;ve actually started things for you. Specifically, your code for exercise 1 should go into the function wb2_pg3_ex1, and your code for exercise 2 should go into the function wb2_pg3_ex2.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/two/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/two/</guid>
+      <description>Page 2: Drawing with Canvas Now that we understand that Canvas is an immediate mode graphics API, we can look more at what commands it gives us for drawing.
+Canvas provides a rich set of options for creating shapes and coloring and styling them. We won&amp;rsquo;t talk about all of them here, and only cover the basic options. Beyond that, you are encouraged to go out onto the web to read and try things on your own.</description>
     </item>
     
   </channel>

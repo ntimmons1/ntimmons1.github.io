@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="style559.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style559.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="a02.css" /
+</header>
+
+<body>
+
+    <div id="box2" class="examplebox">
+        <p>
+            Now I am going to use those same boxes, but draw in them.
+            The HTML is basically the same as box 1 (except that the style comes from CSS).
+            The difference is that the JavaScript is going to add a rectangle to each.
+            Be sure to go look at the JavaScript in <code>for_students/page1.js</code>, which gets loaded at the end of the HTML file.
+        </p>
+        <div>
+            <canvas id="canvas2" width="150px" height="100px" ></canvas>
+            <svg id="svg2" width="150px" height="100px" ></svg>
+        </div>
+        <p>
+            We will learn about the detail of how each of those work later,
+            but observe the key difference when you look at the code.
+            In Canvas, we use the "fill" command to fill in the pixels of the
+            rectangle, while in SVG we create a "rect" element and add it to
+            the SVG element.
+        </p>
+        <p>
+            In this simple example, things don't seem too different.
+        </p>
+    </div>
+    <script src="page1.js" type="module"></script>
+</body>
+</html>
