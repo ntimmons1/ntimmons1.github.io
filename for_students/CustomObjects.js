@@ -3,7 +3,7 @@
 // @ts-check
 
 import * as T from "./THREE/src/Three.js";
-import {shaderMaterial} from "./Framework/shaderHelper.js";
+import {shaderMaterial} from "../for_students/Framework/shaderHelper.js";
 import { GrObject } from "./Framework/GrObject.js";
 import { Group } from "./THREE/src/Three.js";
 import * as Loaders from "./Framework/loaders.js";
