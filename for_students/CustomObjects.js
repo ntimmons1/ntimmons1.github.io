@@ -4,7 +4,7 @@
 
 import * as T from "./THREE/src/Three.js";
 import {shaderMaterial} from "../for_students/Framework/shaderHelper.js";
-import { GrObject } from "./Framework/GrObject.js";
+import { GrObject } from "~/Framework/GrObject.js";
 import { Group } from "./THREE/src/Three.js";
 import * as Loaders from "./Framework/loaders.js";
 import { OBJLoader } from "./THREE/examples/jsm/loaders/OBJLoader.js";
