@@ -3,38 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/docs/five/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/four/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/one/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/six/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/three/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/two/</loc>
+    <loc>/docs/hints/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/docs/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
