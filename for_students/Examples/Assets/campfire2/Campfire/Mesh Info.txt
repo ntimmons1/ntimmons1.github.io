@@ -1,3 +1,0 @@
-Verts: 836
-Faces: 716
-Tris: 1542
