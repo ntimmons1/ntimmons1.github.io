@@ -16,7 +16,7 @@
  */
 
 import * as T from "./THREE/src/Three.js";
-import { GrWorld } from "./Framework/GrWorld.js";
+import { GrWorld } from "./framework/GrWorld.js";
 import {GrObject } from "./Framework/GrObject.js";  // only for typing
 import * as Helpers from "./Libs/helpers.js";
 import { WorldUI } from "./Framework/WorldUI.js";
