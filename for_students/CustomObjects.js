@@ -3,9 +3,9 @@
 // @ts-check
 
 import * as T from "./THREE/src/Three.js";
+import {shaderMaterial} from "./Framework/shaderHelper.js";
 import { GrObject } from "./framework/GrObject.js";
 import { Group } from "./THREE/src/Three.js";
-import {shaderMaterial} from "./Framework/shaderHelper.js";
 import * as Loaders from "./Framework/loaders.js";
 import { OBJLoader } from "./THREE/examples/jsm/loaders/OBJLoader.js";
 
