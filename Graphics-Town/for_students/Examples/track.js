@@ -192,7 +192,7 @@ export class Bulldozer extends GrObject{
 		bucketBottomMesh.rotateZ(Math.PI/2);
         bucket_group.add(bucketBottomMesh);
         
-        this.shaderMat = shaderMaterial("/for_students/shaders/ex83.vs","/for_students/shaders/ex83.fs",
+        this.shaderMat = shaderMaterial("/Graphics-Town/for_students/shaders/ex83.vs","/Graphics-Town/for_students/shaders/ex83.fs",
         {
             side:T.DoubleSide,
             uniforms: {
@@ -289,7 +289,7 @@ export class DirtPile extends GrObject{
         this.dirt1 = [];
         this.x = params.x;
         this.z = params.z;
-        this.shaderMat = shaderMaterial("/for_students/shaders/ex83.vs","/for_students/shaders/ex83.fs",
+        this.shaderMat = shaderMaterial("/Graphics-Town/for_students/shaders/ex83.vs","/Graphics-Town/for_students/shaders/ex83.fs",
         {
             side:T.DoubleSide,
             uniforms: {

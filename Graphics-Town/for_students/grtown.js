@@ -18,7 +18,7 @@
 import * as T from "./THREE/src/Three.js";
 import {shaderMaterial} from "./Framework/shaderHelper.js";
 import { GrWorld } from "./Framework/GrWorld.js";
-//import {GrObject } from "./Framework/GrObject.js";  // only for typing
+import {GrObject } from "./Framework/GrObject.js";  // only for typing
 import * as Helpers from "./Libs/helpers.js";
 import { WorldUI } from "./Framework/WorldUI.js";
 import { OBJLoader } from "./THREE/examples/jsm/loaders/OBJLoader.js";
@@ -172,7 +172,7 @@ function grtown() {
     world.add(heli2);
     heli2.objects[0].scale.set(2,2,2);
 
-    let shaderMat = shaderMaterial("/for_students/shaders/ex83.vs","/for_students/shaders/ex83.fs",
+    let shaderMat = shaderMaterial("/Graphics-Town/for_students/shaders/ex83.vs","/Graphics-Town/for_students/shaders/ex83.fs",
     {
         side:T.DoubleSide,
         uniforms: {
@@ -189,7 +189,7 @@ function grtown() {
     gp.position.z = -15;
     world.scene.add(gp);
 
-    let wt=new T.TextureLoader().load("/Images/coblestone.jpg");
+    let wt=new T.TextureLoader().load("/Graphics-Town/Images/coblestone.jpg");
     let coblestoneMaterial = new T.MeshStandardMaterial({map:wt,roughness:1});
     var geo = new T.PlaneGeometry(43, 4, 1, 1);
     var plane = new T.Mesh(geo, coblestoneMaterial);
@@ -207,7 +207,7 @@ function grtown() {
     world.add(lake2);
 
     new T.CubeTextureLoader()
-    .setPath('/Images/skybox/thunder/')
+    .setPath('/Graphics-Town/Images/skybox/thunder/')
     .load(
         [
         'thunder_ft.jpg',
@@ -222,14 +222,6 @@ function grtown() {
         } 
 );
 
-    /** Race Track - with three things racing around */
-    // let track = new CircularTrack();
-    // let tc1 = new TrackCube(track);
-    // let tc2 = new TrackCube(track);
-    // let tc3 = new TrackCar(track);
-
-    console.log("TEST");
-    console.log(world.groundplane);
     world.groundplane.mater
 
     let d = new DirtPile({"x":-9.5,"z":13});
@@ -251,14 +243,6 @@ function grtown() {
 
     let bd = new H.BoulderObject(20,10);
     world.add(bd);
-
-    let f2 = new H.Fire();
-    f2.objects[0].scale.set(.02,.02,.02);
-    f2.objects[0].rotateX(-Math.PI/2);
-    f2.objects[0].position.x = -10;
-    f2.objects[0].position.z = -10;
-    world.add(f2);
-
 
     let track2 = new OblongTrack();
     world.add(track2);

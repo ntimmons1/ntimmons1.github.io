@@ -4,7 +4,7 @@
 
 import * as T from "./THREE/src/Three.js";
 import {shaderMaterial} from "../for_students/Framework/shaderHelper.js";
-import { GrObject } from "~/Framework/GrObject.js";
+import { GrObject } from "./Framework/GrObject.js";
 import { Group } from "./THREE/src/Three.js";
 import * as Loaders from "./Framework/loaders.js";
 import { OBJLoader } from "./THREE/examples/jsm/loaders/OBJLoader.js";
@@ -17,13 +17,13 @@ function getRndInteger(min, max) {
 export class SmallCastleObject extends GrObject{
     constructor(){
         let group = new T.Group();
-        let wt=new T.TextureLoader().load("/assets/wall.jpg");
+        let wt=new T.TextureLoader().load("/Graphics-Town/assets/wall.jpg");
         let wallMaterial = new T.MeshStandardMaterial({map:wt,roughness:1});
 
-        let wtd=new T.TextureLoader().load("/assets/wallDoor.jpg");
+        let wtd=new T.TextureLoader().load("/Graphics-Town/assets/wallDoor.jpg");
         let wallDoorMaterial = new T.MeshStandardMaterial({map:wtd,roughness:1});
 
-        let wtw=new T.TextureLoader().load("/assets/wallWindows.jpg");
+        let wtw=new T.TextureLoader().load("/Graphics-Town/assets/wallWindows.jpg");
         let wallWindowsMaterial = new T.MeshStandardMaterial({map:wtw,roughness:1});
 
         var cubeMaterialArray = [];
@@ -39,7 +39,7 @@ export class SmallCastleObject extends GrObject{
         group.add(stoneBaseMesh);
         stoneBaseMesh.position.y = .5;
 
-        let rf=new T.TextureLoader().load("/assets/roof.jpg");
+        let rf=new T.TextureLoader().load("/Graphics-Town/assets/roof.jpg");
         let roofMaterial = new T.MeshStandardMaterial({map:rf,roughness:1});
 
         let roofGeometry = new T.ConeBufferGeometry(.9, .8, 4, 4);
@@ -57,28 +57,26 @@ export class LargeCastleObject extends GrObject{
     constructor(){
         let group = new T.Group();
 
-        let wt=new T.TextureLoader().load("/assets/wall.jpg");
+        let wt=new T.TextureLoader().load("/Graphics-Town/assets/wall.jpg");
         let wallMaterial = new T.MeshStandardMaterial({map:wt,roughness:1});
 
-        let longWindows=new T.TextureLoader().load("/assets/castle-wall-long-windows.jpg");
+        let longWindows=new T.TextureLoader().load("/Graphics-Town/assets/castle-wall-long-windows.jpg");
         let longWindowsMaterial = new T.MeshStandardMaterial({map:longWindows,roughness:1});
 
-        let longBlank=new T.TextureLoader().load("/assets/castle-wall-long.jpg");
+        let longBlank=new T.TextureLoader().load("/Graphics-Town/assets/castle-wall-long.jpg");
         let longBlankMaterial = new T.MeshStandardMaterial({map:longBlank,roughness:1});
 
-        let longWindowsDoor=new T.TextureLoader().load("/assets/castle-wall-long-door.jpg");
+        let longWindowsDoor=new T.TextureLoader().load("/Graphics-Town/assets/castle-wall-long-door.jpg");
         let longWindowsDoorMaterial = new T.MeshStandardMaterial({map:longWindowsDoor,roughness:1});
 
-        let shortWindows=new T.TextureLoader().load("/assets/castle-wall-short-windows.jpg");
+        let shortWindows=new T.TextureLoader().load("/Graphics-Town/assets/castle-wall-short-windows.jpg");
         let shortWindowsMaterial = new T.MeshStandardMaterial({map:shortWindows,roughness:1});
 
-        let shortBlank=new T.TextureLoader().load("/assets/castle-wall-short.jpg");
+        let shortBlank=new T.TextureLoader().load("/Graphics-Town/assets/castle-wall-short.jpg");
         let shortBlankMaterial = new T.MeshStandardMaterial({map:shortBlank,roughness:1});
 
-        let spireTexture=new T.TextureLoader().load("/assets/spire.jpg");
+        let spireTexture=new T.TextureLoader().load("/Graphics-Town/assets/spire.jpg");
         let spireMaterial = new T.MeshStandardMaterial({map:spireTexture,roughness:1});
-
-
 
         let longWindowMaterialArray = [];
         longWindowMaterialArray.push( longBlankMaterial );
@@ -198,7 +196,7 @@ export class IglooObject extends GrObject{
 export class hutObject extends GrObject{
     constructor(){
         let group = new T.Group();
-        let i=new T.TextureLoader().load("/assets/bamboo-wall.jpg");
+        let i=new T.TextureLoader().load("/Graphics-Town/assets/bamboo-wall.jpg");
         i.wrapS = i .wrapT = T.RepeatWrapping;
         i.offset.set(0,0);
         i.offset.set
@@ -209,7 +207,7 @@ export class hutObject extends GrObject{
         wallMesh.position.y=.4
         group.add(wallMesh);
 
-        let rf=new T.TextureLoader().load("/assets/straw.jpg");
+        let rf=new T.TextureLoader().load("/Graphics-Town/assets/straw.jpg");
         let roofMaterial = new T.MeshStandardMaterial({map:rf,roughness:1});
 
         let roofGeometry = new T.ConeBufferGeometry(.9, .8, 10, 10);
@@ -225,10 +223,10 @@ export class hutObject extends GrObject{
 export class PineTreeObject extends GrObject{
     constructor(){
         let group = new T.Group();
-        let rf=new T.TextureLoader().load("/assets/tree.jpg");
+        let rf=new T.TextureLoader().load("/Graphics-Town/assets/tree.jpg");
         let treeMaterial = new T.MeshStandardMaterial({map:rf,roughness:1});
 
-        let tf=new T.TextureLoader().load("/assets/bark.jpg");
+        let tf=new T.TextureLoader().load("/Graphics-Town/assets/bark.jpg");
         let barkMaterial = new T.MeshStandardMaterial({map:tf,roughness:1});
 
         let treeTrunkGeometry = new T.CylinderGeometry( .06, .06, .5,10);
@@ -278,7 +276,7 @@ export class BumpMushroomObject extends GrObject{
         lathe.rotateX(Math.PI);
         lathe.scale.set(.5,.5,.5);
 
-        let tl=new T.TextureLoader().load("/Images/blue-lines2.png",function(tex){
+        let tl=new T.TextureLoader().load("/Graphics-Town/Images/blue-lines2.png",function(tex){
             let m = new T.MeshPhongMaterial({map:tex,normalMap:tex});
             lathe.material = m;
         });
@@ -303,7 +301,7 @@ export class NormalMushroomObject extends GrObject{
         lathe.rotateX(Math.PI);
         lathe.scale.set(.5,.5,.5);
 
-        let tl=new T.TextureLoader().load("/Images/blue-lines2.png",function(tex){
+        let tl=new T.TextureLoader().load("/Graphics-Town/Images/blue-lines2.png",function(tex){
             let m = new T.MeshStandardMaterial({map:tex,bumpMap:tex});
             lathe.material = m;
             lathe.material.needsUpdate = true;
@@ -328,7 +326,7 @@ export class TextureMushroomObject extends GrObject{
         lathe.rotateX(Math.PI);
         lathe.scale.set(.5,.5,.5);
 
-        let tl = new T.TextureLoader().load("/assets/dots.png",function(tex){
+        let tl = new T.TextureLoader().load("/Graphics-Town/assets/dots.png",function(tex){
         // let tl=new T.TextureLoader().load("/Images/blue-lines2.png",function(tex){
             // let m = new T.MeshLambertMaterial({color:"white",map:tex,emissiveMap:tex,emissive:"green",emissiveIntensity: 5});
             let m = new T.MeshPhongMaterial({color:"white",map:tex,displacementMap:tex});
@@ -506,10 +504,10 @@ export class LakeObject extends GrObject{
         super("LakeObject", group);
         this.clock = new T.Clock();
 
-    var nt = new T.TextureLoader().load( '/Images/cloud.png' );
+    var nt = new T.TextureLoader().load( '/Graphics-Town/Images/cloud.png' );
 	nt.wrapS = nt.wrapT = T.RepeatWrapping; 
 
-    var wt = new T.TextureLoader().load( '/Images/water2.png' );
+    var wt = new T.TextureLoader().load( '/Graphics-Town/Images/water2.png' );
 	wt.wrapS = wt.wrapT = T.RepeatWrapping; 
 	
 	this.uniforms = {
@@ -521,7 +519,7 @@ export class LakeObject extends GrObject{
 		time: 	{ type: "f", value: 1.0 }
 	};
 
-    let sm = shaderMaterial("/for_students/shaders/waterVShader.vs","/for_students/shaders/waterFShader.fs",
+    let sm = shaderMaterial('/Graphics-Town/for_students/shaders/waterVShader.vs','/Graphics-Town/for_students/shaders/waterFShader.fs',
     {
         side:T.DoubleSide,
         uniforms: this.uniforms
@@ -534,27 +532,12 @@ export class LakeObject extends GrObject{
     var lake = new T.Mesh( fg, sm );
     lake.position.set(-5,.01,-8);
     lake.rotateX(Math.PI);
-    console.log(lake);
     group.add(lake);
     }
 
     tick(){
         let theta = performance.now() / 10000;
         this.uniforms.time.value = theta;
-    }
-}
-
-export class FireImportObject extends Loaders.ObjGrObject {
-    constructor(x,z) {
-        // super({obj:"../assets/campfire2/Campfire/Campfire.obj",norm:2.0,name:"Fire"});
-        super({obj:"../assets/christree/12150_Christmas_Tree_V2_L2.obj",norm:2.0,name:"Fire"});
-        console.log(this.objects[0]);
-        console.log("TEST FBX");
-        this.x = x;
-        this.z = z;
-        this.u = 0;
-    }
-    tick(delta,timeOfDay) {
     }
 }
 
@@ -565,7 +548,7 @@ export class CampfireObject extends GrObject{
         super("CampfireObject", group);
         this.group = group;
 
-        let tf=new T.TextureLoader().load("/assets/bark.jpg");
+        let tf=new T.TextureLoader().load("/Graphics-Town/assets/bark.jpg");
         let barkMaterial = new T.MeshStandardMaterial({map:tf,roughness:1});
         let logGeo = new T.CylinderGeometry(.15,.15);
         let logMesh = new T.Mesh(logGeo, barkMaterial);
@@ -602,7 +585,7 @@ export class CampfireObject extends GrObject{
             group.add(l)
         }
 
-        let rtt=new T.TextureLoader().load("/assets/fire2.png");
+        let rtt=new T.TextureLoader().load("/Graphics-Town/assets/fire2.png");
         const fireMaterial = new T.SpriteMaterial({
             map: rtt,
             side: T.DoubleSide,
@@ -700,7 +683,7 @@ export class BoulderObject extends GrObject{
         r4.translate(0,0,2)
         g.merge(r4)
 
-        let rt=new T.TextureLoader().load("/assets/rock.png");
+        let rt=new T.TextureLoader().load("/Graphics-Town/assets/rock.png");
         let rockMaterial = new T.MeshStandardMaterial({map:rt,roughness:1});
 
         let rock = new T.Mesh(
@@ -717,19 +700,5 @@ export class BoulderObject extends GrObject{
         })
         offset(g,0.2)
         group.add(rock);
-    }
-}
-
-export class Fire extends GrObject{
-    constructor(){
-        let group = new T.Group();
-        super("fire", group);
-        let loader = new OBJLoader();
-        // loader.load('"../assets/2ue50ws967mo-campfire_model/Campfire OBJ.obj"', function(fire)
-        loader.load('../assets/dog/Dog/12228_Dog_v1_L2.obj', function(fire)
-        {
-            group.add(fire);
-        });
-        group.position.set(0,0,0);
     }
 }
