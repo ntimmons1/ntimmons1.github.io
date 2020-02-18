@@ -3,9 +3,9 @@
 // @ts-check
 
 import * as T from "./THREE/src/Three.js";
-import {shaderMaterial} from "./Framework/shaderHelper.js";
+// import {shaderMaterial} from "./Framework/shaderHelper.js";
 import { GrObject } from "./framework/GrObject.js";
-import { Group } from "./THREE/src/Three.js";
+import { Group, Material, MeshBasicMaterial } from "./THREE/src/Three.js";
 import * as Loaders from "./Framework/loaders.js";
 import { OBJLoader } from "./THREE/examples/jsm/loaders/OBJLoader.js";
 
@@ -521,12 +521,13 @@ export class LakeObject extends GrObject{
 		time: 	{ type: "f", value: 1.0 }
 	};
 
-    let sm = shaderMaterial("/for_students/shaders/waterVShader.vs","/for_students/shaders/waterFShader.fs",
-    {
-        side:T.DoubleSide,
-        uniforms: this.uniforms
+    // let sm = shaderMaterial("/for_students/shaders/waterVShader.vs","/for_students/shaders/waterFShader.fs",
+    // {
+    //     side:T.DoubleSide,
+    //     uniforms: this.uniforms
         
-    });
+    // });
+    let sm = new MeshBasicMaterial();
 	sm.side = T.DoubleSide;
 	sm.transparent = false;
 	
