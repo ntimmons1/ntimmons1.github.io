@@ -16,6 +16,7 @@
  */
 
 import * as T from "./THREE/src/Three.js";
+import {shaderMaterial} from "./Framework/shaderHelper.js";
 import { GrWorld } from "./Framework/GrWorld.js";
 //import {GrObject } from "./Framework/GrObject.js";  // only for typing
 import * as Helpers from "./Libs/helpers.js";
@@ -29,7 +30,6 @@ import {Helicopter, Helipad} from "./Examples/helicopter.js";
 import {ShinySculpture} from "./Examples/shinySculpture.js";
 import {MorphTest} from "./Examples/morph.js";
 import * as H from "./CustomObjects.js";
-import {shaderMaterial} from "./Framework/shaderHelper.js";
 import { SimpleGroundPlane } from "./Framework/GroundPlane.js";
 
 /**
